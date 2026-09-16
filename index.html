@@ -21,7 +21,6 @@
       margin: 0;
       padding: 0;
     }
-    /* ヘッダーに写真を背景として追加（暗めのグラデーションを重ねて文字を見やすく） */
     header {
       background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(46, 125, 50, 0.85)), 
                   url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
@@ -64,7 +63,7 @@
     /* プロフィール用のスタイル */
     .profile-box {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 1.2rem;
       margin-top: 1rem;
     }
@@ -83,7 +82,7 @@
       font-weight: bold;
       font-size: 1.1rem;
       color: var(--primary-color);
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.4rem;
     }
 
     /* コンパクトな12章一覧用のスタイル */
@@ -125,6 +124,15 @@
       white-space: nowrap;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+
+    /* スマホ表示時にプロフィールの配置を調整 */
+    @media (max-width: 600px) {
+      .profile-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -144,12 +152,13 @@
     <section class="card">
       <h2>管理人プロフィール</h2>
       <div class="profile-box">
-        <!-- プロフィール画像（自由に変更可能です） -->
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="管理人アイコン" class="profile-img">
+        <!-- トレーナー感のある汎用アイコン画像素材に変更 -->
+        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=200&q=80" alt="トレーナーアイコン" class="profile-img">
         <div class="profile-text">
-          <div class="profile-name">運営者：トレーナーAI実践室</div>
-          <p style="margin: 0; font-size: 0.88rem; color: #555;">
-            現場での指導経験を活かし、パーソナルトレーナーやセラピスト向けに「現場で本当に使えるAI活用術」を発信中。セッション作成・カウンセリング・SNS発信の効率化をサポートします。
+          <div class="profile-name">運営者プロフィール</div>
+          <p style="margin: 0; font-size: 0.9rem; color: #444; line-height: 1.7;">
+            トレーナー、セラピストとして活動しながら、AIを本格的に使い始めてから4ヶ月、実践、実践、ひたすら実践を繰り返し、自社のトレーニングログ、会員管理システムをiPadとiPhoneのみで開発という経験を積む。その他、セミナー資料作成やInstagram、SNSなどの自動投稿など、AIを活用して実践中。<br><br>
+            また、実際の現場での介入方法などAIによるサポートシステムを構築し、自らのアプローチ方法を改善するなど、多岐にわたりAIを活用している。今現在は、サブエージェントなどを使ったグラフエンジニアリングや様々な自動化に取り組んでいる最中。今現在もiPhoneとiPadの限られた作業環境で試行錯誤している。
           </p>
         </div>
       </div>
