@@ -65,7 +65,6 @@
       gap: 0.5rem;
     }
 
-    /* 画像バナー */
     .banner-img {
       width: 100%;
       height: auto;
@@ -74,7 +73,6 @@
       object-fit: cover;
     }
 
-    /* ポイント・図解ボックス */
     .info-box {
       background-color: var(--primary-light);
       border-left: 5px solid var(--primary-color);
@@ -89,7 +87,7 @@
       margin-bottom: 0.3rem;
     }
 
-    /* アプリ比較カードグリッド */
+    /* アプリ比較カード */
     .app-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -108,23 +106,24 @@
       align-items: center;
     }
 
-    /* ★ AIロゴ画像用スタイル（背景白＆綺麗に収める） */
-    .app-logo-wrap {
-      width: 56px;
-      height: 56px;
+    /* 確実に表示されるロゴバッジスタイル */
+    .app-icon-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
       margin-bottom: 0.8rem;
-      background: #f8f9fa;
-      border-radius: 12px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .app-logo {
-      width: 38px;
-      height: 38px;
-      object-fit: contain;
-    }
+    .bg-chatgpt { background: linear-gradient(135deg, #10a37f, #0d8a6b); }
+    .bg-claude { background: linear-gradient(135deg, #d97706, #b45309); }
+    .bg-gemini { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+
     .app-name {
       font-weight: bold;
       font-size: 1.1rem;
@@ -149,7 +148,6 @@
       margin: 0;
     }
 
-    /* プロンプトボックス（コピーボタン付き） */
     .prompt-box-wrapper {
       position: relative;
       margin: 1.2rem 0;
@@ -183,7 +181,6 @@
       background-color: #1b5e20;
     }
 
-    /* ステップナビゲーション */
     .step-list {
       counter-reset: step-counter;
       list-style: none;
@@ -228,7 +225,6 @@
 
   <main class="container">
 
-    <!-- 導入解説 -->
     <section class="card">
       <h2>スマホ1台で現場が変わる理由</h2>
       <p>「AIを活用するにはパソコンやプログラミングが必要なのでは？」と思われがちですが、**トレーナーやセラピストの現場で最も威力を発揮するのは「スマホ・タブレット」**です。</p>
@@ -245,7 +241,7 @@
       </div>
     </section>
 
-    <!-- アプリ比較図解（安定・公式ロゴ版） -->
+    <!-- アプリ比較図解（確実表示版） -->
     <section class="card">
       <h2>まず入れるべきおすすめAIアプリ3選</h2>
       <p>すべて基本無料で使えます。用途に合わせて使い分けるのがスマートです。</p>
@@ -253,9 +249,7 @@
       <div class="app-grid">
         <!-- ChatGPT -->
         <div class="app-card">
-          <div class="app-logo-wrap">
-            <img src="https://www.vectorlogo.zone/logos/openai/openai-icon.svg" alt="ChatGPTロゴ" class="app-logo">
-          </div>
+          <div class="app-icon-badge bg-chatgpt">GPT</div>
           <div class="app-name">ChatGPT</div>
           <span class="app-tag">王道・万能型</span>
           <p class="app-desc">会話・文章作成・画像解析・音声対話のすべてが高水準。まずはこれだけでOK。</p>
@@ -263,9 +257,7 @@
 
         <!-- Claude -->
         <div class="app-card">
-          <div class="app-logo-wrap">
-            <img src="https://www.vectorlogo.zone/logos/anthropic/anthropic-icon.svg" alt="Claudeロゴ" class="app-logo">
-          </div>
+          <div class="app-icon-badge bg-claude">C</div>
           <div class="app-name">Claude</div>
           <span class="app-tag">文章・要約特化</span>
           <p class="app-desc">自然な日本語と長文読解が得意。論文要約やカウンセリング記録の文章整理に最適。</p>
@@ -273,9 +265,7 @@
 
         <!-- Gemini -->
         <div class="app-card">
-          <div class="app-logo-wrap">
-            <img src="https://www.vectorlogo.zone/logos/google_gemini/google_gemini-icon.svg" alt="Geminiロゴ" class="app-logo">
-          </div>
+          <div class="app-icon-badge bg-gemini">G</div>
           <div class="app-name">Gemini</div>
           <span class="app-tag">Google連携・最新情報</span>
           <p class="app-desc">Google検索やYouTube、Gmailなどと連携し、最新のヘルスケアトレンド調査に強み。</p>
@@ -283,7 +273,6 @@
       </div>
     </section>
 
-    <!-- 設定と準備ステップ -->
     <section class="card">
       <h2>導入ステップと初期設定（3分で完了）</h2>
       
@@ -317,7 +306,6 @@
       </div>
     </section>
 
-    <!-- 現場でのファーストステップ -->
     <section class="card">
       <h2>今日からできる！スマホAI活用のファーストステップ</h2>
       <p>まずはアプリを開き、音声入力ボタン（マイクマーク）を押して、セッション直後の感想やクライアントの訴えを呟いてみましょう。</p>
