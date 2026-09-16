@@ -60,78 +60,114 @@
       margin-top: 0;
     }
     
-    /* プロフィール用のスタイル */
-    .profile-box {
+    /* プロフィール用のスタイル最適化 */
+    .profile-header {
       display: flex;
-      align-items: flex-start;
-      gap: 1.2rem;
-      margin-top: 1rem;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
     }
     .profile-img {
-      width: 80px;
-      height: 80px;
+      width: 75px;
+      height: 75px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid var(--primary-color);
       flex-shrink: 0;
     }
-    .profile-text {
-      font-size: 0.95rem;
-    }
     .profile-name {
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--primary-color);
-      margin-bottom: 0.4rem;
+      margin: 0;
+    }
+    
+    /* 実績バッジ（タグ） */
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+    .badge {
+      background-color: var(--primary-light);
+      color: var(--primary-color);
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      border: 1px solid var(--primary-color);
     }
 
-    /* コンパクトな12章一覧用のスタイル */
+    /* SNS・連絡ボタン */
+    .sns-links {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .sns-btn {
+      flex: 1;
+      min-width: 130px;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: white;
+      background-color: #333;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .sns-btn.contact {
+      background-color: var(--primary-color);
+    }
+
+    /* カテゴリ分け目次リストのスタイル */
+    .category-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      background-color: #f0f4f1;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      margin: 1.2rem 0 0.6rem;
+    }
     .chapter-list {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
-      margin-top: 1rem;
+      gap: 0.5rem;
     }
     .chapter-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: var(--primary-light);
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
       border-left: 4px solid var(--primary-color);
       border-radius: 6px;
-      padding: 0.8rem 1rem;
+      padding: 0.7rem 0.9rem;
       transition: background-color 0.2s;
     }
     .chapter-item:hover {
-      background-color: #dcedc8;
+      background-color: var(--primary-light);
     }
     .chapter-title {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: bold;
       color: var(--text-color);
       margin: 0;
-      padding-right: 0.5rem;
     }
     .btn-sm {
       display: inline-block;
       background-color: var(--primary-color);
       color: white;
       text-decoration: none;
-      padding: 0.3rem 1rem;
+      padding: 0.3rem 0.9rem;
       border-radius: 15px;
       font-weight: bold;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       white-space: nowrap;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    /* スマホ表示時にプロフィールの配置を調整 */
-    @media (max-width: 600px) {
-      .profile-box {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
     }
   </style>
 </head>
@@ -148,82 +184,93 @@
       <p>このサイトでは、パーソナルトレーナーやセラピストが日常業務や指導で今すぐ使えるAI活用ノウハウを発信しています。最新のAIツールを取り入れて、業務効率化と指導のクオリティ向上を目指しましょう！</p>
     </section>
 
-    <!-- 管理人プロフィール -->
+    <!-- 改修版：管理人プロフィール -->
     <section class="card">
       <h2>管理人プロフィール</h2>
-      <div class="profile-box">
-        <!-- トレーナー感のある汎用アイコン画像素材に変更 -->
+      <div class="profile-header">
         <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=200&q=80" alt="トレーナーアイコン" class="profile-img">
-        <div class="profile-text">
-          <div class="profile-name">運営者プロフィール</div>
-          <p style="margin: 0; font-size: 0.9rem; color: #444; line-height: 1.7;">
-            トレーナー、セラピストとして活動しながら、AIを本格的に使い始めてから4ヶ月、実践、実践、ひたすら実践を繰り返し、自社のトレーニングログ、会員管理システムをiPadとiPhoneのみで開発という経験を積む。その他、セミナー資料作成やInstagram、SNSなどの自動投稿など、AIを活用して実践中。<br><br>
-            また、実際の現場での介入方法などAIによるサポートシステムを構築し、自らのアプローチ方法を改善するなど、多岐にわたりAIを活用している。今現在は、サブエージェントなどを使ったグラフエンジニアリングや様々な自動化に取り組んでいる最中。今現在もiPhoneとiPadの限られた作業環境で試行錯誤している。
-          </p>
+        <div>
+          <h3 class="profile-name">運営者プロフィール</h3>
+          <div class="badge-container">
+            <span class="badge">📱 iPhone/iPadのみで開発</span>
+            <span class="badge">⚡️ AI歴4ヶ月</span>
+            <span class="badge">🤖 自動化・グラフエンジニアリング</span>
+          </div>
         </div>
+      </div>
+
+      <p style="margin: 0; font-size: 0.9rem; color: #444; line-height: 1.7;">
+        トレーナー、セラピストとして活動しながら、AIを本格的に使い始めてから4ヶ月、実践、実践、ひたすら実践を繰り返し、自社のトレーニングログ、会員管理システムをiPadとiPhoneのみで開発という経験を積む。その他、セミナー資料作成やInstagram、SNSなどの自動投稿など、AIを活用して実践中。<br><br>
+        また、実際の現場での介入方法などAIによるサポートシステムを構築し、自らのアプローチ方法を改善するなど、多岐にわたりAIを活用している。今現在は、サブエージェントなどを使ったグラフエンジニアリングや様々な自動化に取り組んでいる最中。今現在もiPhoneとiPadの限られた作業環境で試行錯誤している。
+      </p>
+
+      <div class="sns-links">
+        <a href="#" class="sns-btn">公式X (Twitter)</a>
+        <a href="#" class="sns-btn contact">お問い合わせ・ご相談</a>
       </div>
     </section>
 
-    <!-- タイトルのみのコンパクト目次一覧 -->
+    <!-- 改修版：カテゴリ分けコンパクト目次 -->
     <section class="card">
       <h2>目次（全12章）</h2>
 
+      <!-- 入門編 -->
+      <div class="category-title">🔰 1. 基礎・導入編</div>
       <div class="chapter-list">
         <div class="chapter-item">
           <span class="chapter-title">💡 第1章：なぜ今、ヘルスケア業界でAIなのか？</span>
           <a href="chapter1.html" class="btn-sm">読む</a>
         </div>
-
         <div class="chapter-item">
           <span class="chapter-title">📱 第2章：無料・スマホで始めるAI活用！アプリの準備</span>
           <a href="chapter2.html" class="btn-sm">読む</a>
         </div>
+      </div>
 
+      <!-- 現場実践編 -->
+      <div class="category-title">🏋️‍♂️ 2. 現場・指導実践編</div>
+      <div class="chapter-list">
         <div class="chapter-item">
-          <span class="chapter-title">🏋️‍♂️ 第3章：運動処方・メニュー作成を効率化するプロンプト術</span>
+          <span class="chapter-title">🏋️‍♂️ 第3章：運動処方・メニュー作成効率化</span>
           <a href="chapter3.html" class="btn-sm">読む</a>
         </div>
-
         <div class="chapter-item">
-          <span class="chapter-title">📋 第4章：カルテ作成・カウンセリング要約プロンプト</span>
+          <span class="chapter-title">📋 第4章：カルテ作成・カウンセリング要約</span>
           <a href="chapter4.html" class="btn-sm">読む</a>
         </div>
-
         <div class="chapter-item">
-          <span class="chapter-title">📲 第5章：SNS・ブログ発信をAIで効率化するテクニック</span>
+          <span class="chapter-title">📲 第5章：SNS・ブログ発信の自動化テクニック</span>
           <a href="chapter5.html" class="btn-sm">読む</a>
         </div>
-
         <div class="chapter-item">
-          <span class="chapter-title">🥗 第6章：AIを活用した食事指導・栄養アドバイス作成</span>
+          <span class="chapter-title">🥗 第6章：食事指導・栄養アドバイス作成</span>
           <a href="chapter6.html" class="btn-sm">読む</a>
         </div>
-
         <div class="chapter-item">
-          <span class="chapter-title">📚 第7章：最新論文・文献をAIで検索・要約するリサーチ術</span>
+          <span class="chapter-title">📚 第7章：最新論文・文献のリサーチ＆要約術</span>
           <a href="chapter7.html" class="btn-sm">読む</a>
         </div>
-
         <div class="chapter-item">
-          <span class="chapter-title">💬 第8章：クレーム対応・メール返信を円滑にする対話プロンプト</span>
+          <span class="chapter-title">💬 第8章：クレーム対応・メール返信の自動化</span>
           <a href="chapter8.html" class="btn-sm">読む</a>
         </div>
+      </div>
 
+      <!-- 運営・応用編 -->
+      <div class="category-title">🚀 3. 運営・集客・応用編</div>
+      <div class="chapter-list">
         <div class="chapter-item">
-          <span class="chapter-title">📊 第9章：ジム運営・売上管理を効率化するスプレッドシート×AI活用</span>
+          <span class="chapter-title">📊 第9章：ジム運営・スプレッドシート×AI活用</span>
           <a href="chapter9.html" class="btn-sm">読む</a>
         </div>
-
         <div class="chapter-item">
-          <span class="chapter-title">🎨 第10章：画像生成AIで作るチラシ・POP・アイキャッチ画像</span>
+          <span class="chapter-title">🎨 第10章：画像生成AIで作るPOP・アイキャッチ</span>
           <a href="chapter10.html" class="btn-sm">読む</a>
         </div>
-
         <div class="chapter-item">
-          <span class="chapter-title">🎯 第11章：AIを活用した集客・マーケティング戦略</span>
+          <span class="chapter-title">🎯 第11章：AIを活用した集客・マーケティング</span>
           <a href="chapter11.html" class="btn-sm">読む</a>
         </div>
-
         <div class="chapter-item">
           <span class="chapter-title">🤝 第12章：ヘルスケア×AIの未来とトレーナーの役割</span>
           <a href="chapter12.html" class="btn-sm">読む</a>
