@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トレーナー＆セラピストのためのAI実践室 | スマホ1台・完全無料で作るAI学習サイト</title>
+  <style>
+    :root {
+      --primary-color: #2e8b57;
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --accent-color: #e9f5ed;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+    }
+    .badge {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+      font-size: 1.3rem;
+      margin-top: 0;
+    }
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+    }
+    ul, ol {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    .toc-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .toc-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed #e0e0e0;
+    }
+    .toc-list li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .toc-list li a:hover {
+      color: var(--primary-color);
+    }
+    code, pre {
+      background-color: #f1f1f1;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    blockquote {
+      background-color: var(--accent-color);
+      border-left: 4px solid var(--primary-color);
+      margin: 1rem 0;
+      padding: 0.8rem;
+      font-style: italic;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>トレーナー＆セラピストのためのAI実践室</h1>
+  <p>スマホ1台・完全無料（ゼロ円）で学ぶAI活用とWEB構築</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <span class="badge">ロードマップ一覧</span>
+    <h2>全12章の学習目次</h2>
+    <ul class="toc-list">
+      <li><a href="#ch1">【第1章】AIって結局なんなの？Google検索との違い</a></li>
+      <li><a href="#ch2">【第2章】無料・スマホで始めるAI活用！アプリの準備</a></li>
+      <li><a href="#ch3">【第3章】指示出し（プロンプト）のコツ！失敗しない3つの約束</a></li>
+      <li><a href="#ch4">【第4章】AIってコードも書けるの？プログラミングの壁を壊そう</a></li>
+      <li><a href="#ch5">【第5章】スマホの画面がWEBサイトとして世界に見える理由</a></li>
+      <li><a href="#ch6">【第6章】GitHubアカウントの作成（iPhone版）</a></li>
+      <li><a href="#ch7">【第7章】Cloudflare Pagesに登録して連携しよう</a></li>
+      <li><a href="#ch8">【第8章】スマホで保管庫（リポジトリ）を作ってみよう</a></li>
+      <li><a href="#ch9">【第9章】Geminiにトップページのコードを作ってもらおう</a></li>
+      <li><a href="#ch10">【第10章】スマホでコードを保存（コミット）してみよう</a></li>
+      <li><a href="#ch11">【第11章】Cloudflare Pagesで接続とURL発行</a></li>
+      <li><a href="#ch12">【第12章】記事の追加・更新とこれからのロードマップ</a></li>
+    </ul>
+  </div>
+
+  <!-- 第1章 -->
+  <div class="card" id="ch1">
+    <h2>【第1章】AIって結局なんなの？Google検索との違いを解説</h2>
+    <p>AIとは「スマホの中にいる超優秀な新人スタッフ」です。従来のGoogle検索が「図書室で本を探す作業」だとすれば、AIは「代わりに回答をまとめて提示してくれるアシスタント」です。</p>
+    <ul>
+      <li><strong>Google検索:</strong> 単語で検索 ➔ 複数のサイトを自分で読み比べる</li>
+      <li><strong>AI対話:</strong> 状況を相談 ➔ 最適な答えや文章をその場で作ってくれる</li>
+    </ul>
+  </div>
+
+  <!-- 第2章 -->
+  <div class="card" id="ch2">
+    <h2>【第2章】無料・スマホで始めるAI活用！アプリの準備と最初の一歩</h2>
+    <p>まずはスマホで「Gemini」または「ChatGPT」を準備しましょう。どちらも完全無料で使えます。</p>
+    <ol>
+      <li>App Store / Google Play で「Gemini」を検索してダウンロード</li>
+      <li>お持ちのGoogleアカウントでログイン（登録完了）</li>
+      <li>有料プランの案内が出たら「スキップ」を押す（無料版で100%カバー可能）</li>
+    </ol>
+  </div>
+
+  <!-- 第3章 -->
+  <div class="card" id="ch3">
+    <h2>【第3章】指示出し（プロンプト）のコツ！失敗しない3つの約束</h2>
+    <p>AIに指示を出すときは「前提」「作業」「形式」の3要素をセットで伝えるのがコツです。</p>
+    <blockquote>
+      【前提】あなたはプロのトレーナーです。<br>
+      【作業】30代女性向けにセッション後のお礼LINE文面を作成してください。<br>
+      【形式】丁寧かつ前向きなトーンで300文字程度。
+    </blockquote>
+  </div>
+
+  <!-- 第4章 -->
+  <div class="card" id="ch4">
+    <h2>【第4章】えっ、AIってコードも書けるの？プログラミングの壁を壊そう</h2>
+    <p>あなたが英語のプログラミングコードを覚える必要は一切ありません。「こんなデザインにして」と日本語で指示を出せば、AIが一瞬でHTMLやCSSのコードを作成してくれます。</p>
+  </div>
+
+  <!-- 第5章 -->
+  <div class="card" id="ch5">
+    <h2>【第5章】スマホの画面がWEBサイトとして世界に見える理由</h2>
+    <p>スマホ1台・完全無課金でサイトを公開する道具は3つだけです。</p>
+    <ul>
+      <li><strong>Gemini:</strong> デザイン（コード）を作る役割</li>
+      <li><strong>GitHub:</strong> 作ったコードを保管するネット上の金庫</li>
+      <li><strong>Cloudflare Pages:</strong> 金庫の中身を世界に自動公開する展示台</li>
+    </ul>
+  </div>
+
+  <!-- 第6章〜第12章のサマリー -->
+  <div class="card" id="ch6-12">
+    <h2>【第6章〜第12章】スマホ環境構築＆サイト公開実践ガイド</h2>
+    <p>ツールアカウントの設定からデプロイまでの手順概要です。</p>
+    <ul>
+      <li><strong>第6章〜第8章:</strong> GitHub・Cloudflareのアカウントを作成し、リポジトリ（保管箱）を用意。</li>
+      <li><strong>第9章:</strong> GeminiにWEBサイトの完全コードを作らせてコピー。</li>
+      <li><strong>第10章:</strong> <code>vscode.dev</code> を使ってスマホブラウザ上で <code>index.html</code> を保存（コミット）。</li>
+      <li><strong>第11章〜第12章:</strong> Cloudflare Pagesでデプロイし、専用URL（<code>https://〇〇.pages.dev</code>）を発行！</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 AI Study Room for Trainers & Therapists. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
