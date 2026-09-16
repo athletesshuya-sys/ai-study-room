@@ -3,37 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ヘルスケア＆フィットネスAI実践室 - トレーナー・セラピストのための最新AI活用法</title>
+  <title>ヘルスケア＆フィットネスAI実践室</title>
   <style>
     :root {
       --primary-color: #2e7d32;
-      --secondary-color: #e8f5e9;
-      --text-color: #333333;
+      --primary-light: #e8f5e9;
+      --accent-color: #ff9800;
       --bg-color: #f4f6f8;
       --card-bg: #ffffff;
+      --text-color: #333333;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.7;
+      line-height: 1.8;
       background-color: var(--bg-color);
       color: var(--text-color);
       margin: 0;
       padding: 0;
     }
     header {
-      background-color: var(--primary-color);
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
       color: white;
       padding: 2.5rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     header h1 {
       margin: 0;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
     header p {
-      margin-top: 0.5rem;
+      margin: 0.5rem 0 0;
+      font-size: 0.9rem;
       opacity: 0.9;
-      font-size: 0.95rem;
     }
     .container {
       max-width: 800px;
@@ -42,55 +45,44 @@
     }
     .card {
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
     h2 {
       color: var(--primary-color);
-      border-bottom: 2px solid var(--primary-color);
-      padding-bottom: 0.3rem;
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 0.4rem;
       font-size: 1.3rem;
+      margin-top: 0;
     }
-    ul {
-      padding-left: 1.2rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-    }
-    .chapter-list {
-      list-style: none;
-      padding: 0;
-    }
-    .chapter-item {
-      background-color: var(--secondary-color);
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border-radius: 8px;
+    .chapter-card {
+      background-color: var(--primary-light);
       border-left: 5px solid var(--primary-color);
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin-bottom: 1.2rem;
     }
-    .chapter-title {
-      font-weight: bold;
-      font-size: 1.1rem;
+    .chapter-card h3 {
+      margin: 0 0 0.5rem 0;
       color: var(--primary-color);
-      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
     }
-    .chapter-btn {
+    .chapter-card p {
+      margin: 0 0 1rem 0;
+      font-size: 0.95rem;
+    }
+    .btn {
       display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.4rem 0.8rem;
       background-color: var(--primary-color);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      font-size: 0.85rem;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.85rem;
-      color: #777;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -102,7 +94,6 @@
   </header>
 
   <main class="container">
-
     <section class="card">
       <h2>はじめに</h2>
       <p>このサイトでは、パーソナルトレーナーやセラピストが日常業務や指導で今すぐ使えるAI活用ノウハウを発信しています。最新のAIツールを取り入れて、業務効率化と指導のクオリティ向上を目指しましょう！</p>
@@ -110,45 +101,26 @@
 
     <section class="card">
       <h2>目次（コンテンツ一覧）</h2>
-      <div class="chapter-list">
 
-        <div class="chapter-item">
-          <div class="chapter-title">第1章：なぜ今、ヘルスケア業界でAIなのか？</div>
-          <p>AIを導入するメリットや、トレーナーの現場でどのように役立つのかの基礎知識を解説します。</p>
-          <a href="#chapter1" class="chapter-btn">読む</a>
-        </div>
+      <div class="chapter-card">
+        <h3>第1章：なぜ今、ヘルスケア業界でAIなのか？</h3>
+        <p>AIを導入するメリットや、トレーナーの現場でどのように役立つのかの基礎知識を解説します。</p>
+        <a href="chapter1.html" class="btn">読む</a>
+      </div>
 
-        <div class="chapter-item">
-          <div class="chapter-title">第2章：無料・スマホで始めるAI活用！アプリの準備</div>
-          <p>ChatGPTやGeminiなど、スマホで手軽に使えるおすすめアプリと初期設定手順をまとめました。</p>
-          <a href="chapter2.html" class="chapter-btn">読む</a>
-        </div>
+      <div class="chapter-card">
+        <h3>第2章：無料・スマホで始めるAI活用！アプリの準備</h3>
+        <p>ChatGPTやGeminiなど、スマホで手軽に使えるおすすめアプリと初期設定手順をまとめました。</p>
+        <a href="chapter2.html" class="btn">読む</a>
+      </div>
 
-        <div class="chapter-item">
-          <div class="chapter-title">第3章：運動処方・メニュー作成を効率化するプロンプト術</div>
-          <p>クライアントの要望に応じたパーソナルトレーニングメニューをAIに作成させる具体的な指示文（プロンプト）。</p>
-          <a href="#chapter3" class="chapter-btn">読む</a>
-        </div>
-
+      <div class="chapter-card">
+        <h3>第3章：運動処方・メニュー作成を効率化するプロンプト術</h3>
+        <p>クライアントの要望に応じたパーソナルトレーニングメニューをAIに作成させる具体的な指示文（プロンプト）。</p>
+        <a href="chapter3.html" class="btn">読む</a>
       </div>
     </section>
-
-    <section id="chapter1" class="card">
-      <h2>【第1章】なぜ今、ヘルスケア業界でAIなのか？</h2>
-      <p>現在、ヘルスケアやフィットネスの現場では、AIの活用が急速に進んでいます。</p>
-      <ul>
-        <li><strong>業務時間の短縮：</strong> トレーニングメニューの作成やカルテ作成などの事務作業を効率化。</li>
-        <li><strong>最新エビデンスの収集：</strong> 論文や最新情報の要約を素早く取得。</li>
-        <li><strong>クライアントへの説明力向上：</strong> 解剖学や栄養学のわかりやすい解説文を即座に作成。</li>
-      </ul>
-      <p>AIはトレーナーの代わりになるのではなく、**「強力なアシスタント」**として指導の質を高めてくれます。</p>
-    </section>
-
   </main>
-
-  <footer>
-    <p>&copy; ヘルスケア＆フィットネスAI実践室 All Rights Reserved.</p>
-  </footer>
 
 </body>
 </html>
