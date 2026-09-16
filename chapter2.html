@@ -106,23 +106,26 @@
       align-items: center;
     }
 
-    /* 確実に表示されるロゴバッジスタイル */
-    .app-icon-badge {
+    /* ロゴアイコン用ラッパー */
+    .app-logo-wrap {
       width: 52px;
       height: 52px;
       border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: white;
       margin-bottom: 0.8rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     }
-    .bg-chatgpt { background: linear-gradient(135deg, #10a37f, #0d8a6b); }
-    .bg-claude { background: linear-gradient(135deg, #d97706, #b45309); }
-    .bg-gemini { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+    .bg-chatgpt { background-color: #10a37f; }
+    .bg-claude { background-color: #d97706; }
+    .bg-gemini { background: linear-gradient(135deg, #1a73e8, #4285f4); }
+
+    .app-logo-wrap svg {
+      width: 30px;
+      height: 30px;
+      fill: #ffffff;
+    }
 
     .app-name {
       font-weight: bold;
@@ -241,7 +244,7 @@
       </div>
     </section>
 
-    <!-- アプリ比較図解（確実表示版） -->
+    <!-- アプリ比較図解（インラインSVGロゴ版） -->
     <section class="card">
       <h2>まず入れるべきおすすめAIアプリ3選</h2>
       <p>すべて基本無料で使えます。用途に合わせて使い分けるのがスマートです。</p>
@@ -249,7 +252,9 @@
       <div class="app-grid">
         <!-- ChatGPT -->
         <div class="app-card">
-          <div class="app-icon-badge bg-chatgpt">GPT</div>
+          <div class="app-logo-wrap bg-chatgpt">
+            <svg viewBox="0 0 24 24"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .5104 4.9107 6.051 6.051 0 0 0 6.5146 2.9A5.9878 5.9878 0 0 0 13.21 23.97a6.0557 6.0557 0 0 0 6.5098-2.9 5.9847 5.9847 0 0 0 3.9977-2.9 6.0462 6.0462 0 0 0-1.4366-8.3489zM12 20.6275a3.9824 3.9824 0 0 1-2.0531-.5655l.1027-.06 3.4905-2.0152a1.0027 1.0027 0 0 0 .5049-.8659v-4.0416l2.9463 1.7011c.0125.0075.0232.0175.0342.026v4.1868a3.9954 3.9954 0 0 1-4.0255 3.9351zM5.3207 6.9453a3.989 3.989 0 0 1 2.0531-1.0027v4.0315l-3.4905 2.0152a1.0027 1.0027 0 0 0-.5049.8659v4.0416l-2.9463-1.7011a3.997 3.997 0 0 1 4.8886-8.2504zM3.4561 14.1709l2.9463-1.7012v-3.4024l2.9463-1.7012 2.9463 1.7012v3.4024l-2.9463 1.7012-2.9463-1.7012zm13.1072 2.8837a3.989 3.989 0 0 1-2.0531 1.0027v-4.0315l3.4905-2.0152a1.0027 1.0027 0 0 0 .5049-.8659V7.1231l2.9463 1.7011a3.997 3.997 0 0 1-4.8886 8.2304z"/></svg>
+          </div>
           <div class="app-name">ChatGPT</div>
           <span class="app-tag">王道・万能型</span>
           <p class="app-desc">会話・文章作成・画像解析・音声対話のすべてが高水準。まずはこれだけでOK。</p>
@@ -257,7 +262,9 @@
 
         <!-- Claude -->
         <div class="app-card">
-          <div class="app-icon-badge bg-claude">C</div>
+          <div class="app-logo-wrap bg-claude">
+            <svg viewBox="0 0 24 24"><path d="M17.3,3.5H6.7c-1.8,0-3.2,1.4-3.2,3.2v10.6c0,1.8,1.4,3.2,3.2,3.2h10.6c1.8,0,3.2-1.4,3.2-3.2V6.7C20.5,4.9,19.1,3.5,17.3,3.5z M12,16.2c-2.3,0-4.2-1.9-4.2-4.2s1.9-4.2,4.2-4.2s4.2,1.9,4.2,4.2S14.3,16.2,12,16.2z"/></svg>
+          </div>
           <div class="app-name">Claude</div>
           <span class="app-tag">文章・要約特化</span>
           <p class="app-desc">自然な日本語と長文読解が得意。論文要約やカウンセリング記録の文章整理に最適。</p>
@@ -265,7 +272,9 @@
 
         <!-- Gemini -->
         <div class="app-card">
-          <div class="app-icon-badge bg-gemini">G</div>
+          <div class="app-logo-wrap bg-gemini">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </div>
           <div class="app-name">Gemini</div>
           <span class="app-tag">Google連携・最新情報</span>
           <p class="app-desc">Google検索やYouTube、Gmailなどと連携し、最新のヘルスケアトレンド調査に強み。</p>
