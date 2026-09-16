@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【第9章】ジム運営・売上管理を効率化するスプレッドシート×AI活用 - AI実践室</title>
+  <style>
+    :root {
+      --primary-color: #2e7d32;
+      --primary-light: #e8f5e9;
+      --accent-color: #ff9800;
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.8;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      color: white;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 0.4rem;
+      font-size: 1.3rem;
+      margin-top: 0;
+    }
+    .highlight {
+      background: linear-gradient(transparent 60%, #fff59d 60%);
+      font-weight: bold;
+    }
+    .prompt-box {
+      background-color: #272822;
+      color: #f8f8f2;
+      border-radius: 8px;
+      padding: 1.2rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin: 1rem 0;
+    }
+    .point-box {
+      background-color: var(--primary-light);
+      border: 1px dashed var(--primary-color);
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin-top: 1rem;
+    }
+    .nav-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      color: white;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin: 1.5rem 0 3rem;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+      transition: transform 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>【第9章】ジム運営・売上管理を効率化する<br>スプレッドシート×AI活用</h1>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1. データ管理や計算の悩みを解決</h2>
+      <p>売上集計や顧客の来店頻度分析、継続率の計算など、スプレッドシートやExcelの関数で迷ったときは<span class="highlight">「やりたいことを日本語で伝える」</span>だけでAIが正確な数式を組んでくれます。</p>
+    </section>
+
+    <section class="card">
+      <h2>2. 関数作成プロンプト例</h2>
+      <p>以下のプロンプトのように、シートの列構成と計算したい内容を具体的に伝えます。</p>
+      
+      <div class="prompt-box">【前提】
+私はパーソナルジムを運営しています。Googleスプレッドシートで売上と来店管理を行っています。
+
+【シート構造】
+・A列：会員ID
+・B列：会員名
+・C列：今月の来店回数
+・D列：契約プラン（「月4回」「月8回」「通い放題」）
+
+【指示】
+D列が「月4回」で、かつC列の来店回数が「4回未満」の会員のみを自動でカウントする数式（COUNTIFS関数など）を作成してください。
+また、その数式をどのセルに入力すればよいかも分かりやすく解説してください。</div>
+    </section>
+
+    <section class="card">
+      <h2>3. 業務効率化のワンポイント</h2>
+      <div class="point-box">
+        💡 <strong>エラーが出た時もAIに聞く</strong>
+        <p style="margin-bottom:0; font-size: 0.95rem;">
+          数式を入力して `#N/A` や `#VALUE!` などのエラーが出た場合は、そのエラー画面や数式をそのままAIにコピペして「なぜこのエラーが出るのか修正してください」と聞けば原因と解決策を教えてくれます。
+        </p>
+      </div>
+    </section>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="nav-btn">← トップページに戻る</a>
+    </div>
+  </main>
+
+</body>
+</html>
