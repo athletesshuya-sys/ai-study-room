@@ -7,27 +7,31 @@
   <style>
     :root {
       --primary-color: #2e7d32;
+      --primary-light: #e8f5e9;
+      --accent-color: #ff9800;
       --bg-color: #f4f6f8;
       --card-bg: #ffffff;
       --text-color: #333333;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.7;
+      line-height: 1.8;
       background-color: var(--bg-color);
       color: var(--text-color);
       margin: 0;
       padding: 0;
     }
     header {
-      background-color: var(--primary-color);
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
       color: white;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     header h1 {
       margin: 0;
       font-size: 1.5rem;
+      font-weight: bold;
     }
     .container {
       max-width: 800px;
@@ -36,55 +40,100 @@
     }
     .card {
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
     h2 {
       color: var(--primary-color);
-      border-bottom: 2px solid var(--primary-color);
-      padding-bottom: 0.3rem;
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 0.4rem;
       font-size: 1.3rem;
+      margin-top: 0;
     }
-    ul, ol {
-      padding-left: 1.2rem;
+    .highlight {
+      background: linear-gradient(transparent 60%, #fff59d 60%);
+      font-weight: bold;
     }
-    li {
-      margin-bottom: 0.5rem;
+    .app-box {
+      background-color: #f9f9f9;
+      border-left: 5px solid var(--primary-color);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .step-list {
+      counter-reset: step;
+      list-style: none;
+      padding-left: 0;
+    }
+    .step-list li {
+      position: relative;
+      padding-left: 2.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .step-list li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: var(--primary-color);
+      color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 2rem;
+      font-weight: bold;
+    }
+    .point-box {
+      background-color: var(--primary-light);
+      border: 1px dashed var(--primary-color);
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin-top: 1rem;
     }
     .nav-btn {
       display: inline-block;
-      background-color: var(--primary-color);
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
       color: white;
       text-decoration: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
       font-weight: bold;
       text-align: center;
-      margin-top: 1rem;
+      margin: 1.5rem 0 3rem;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+      transition: transform 0.2s;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>【第2章】無料・スマホで始めるAI活用！アプリの準備</h1>
+    <h1>【第2章】無料・スマホで始めるAI活用！<br>アプリの準備</h1>
   </header>
 
   <main class="container">
     <section class="card">
       <h2>1. まず準備すべきおすすめAIアプリ</h2>
       <p>トレーナーやセラピストが日常業務や学習で活用するなら、まずは以下の2つの無料アプリをスマホに入れておけば間違いありません。</p>
-      <ul>
-        <li><strong>ChatGPT (OpenAI)</strong>: 思考の整理、アイデア出し、文章の作成・要約に万能。</li>
-        <li><strong>Gemini (Google)</strong>: 最新情報の検索やGoogleサービスとの連携、コード生成が得意。</li>
-      </ul>
+      
+      <div class="app-box">
+        <strong>📱 ChatGPT (OpenAI)</strong><br>
+        思考の整理、アイデア出し、文章の作成・要約に万能。まずはこれ！
+      </div>
+      <div class="app-box">
+        <strong>📱 Gemini (Google)</strong><br>
+        最新情報の検索やGoogleサービスとの連携が得意。論文検索などにも活躍！
+      </div>
     </section>
 
     <section class="card">
       <h2>2. アプリのセットアップ3ステップ</h2>
-      <ol>
+      <ol class="step-list">
         <li>App Store（iPhone）を開き、「ChatGPT」または「Gemini」で検索して入手。</li>
         <li>アプリを起動し、GoogleアカウントまたはApple IDでサインイン。</li>
         <li>マイク許可や通知許可を設定して準備完了！</li>
@@ -93,11 +142,15 @@
 
     <section class="card">
       <h2>3. スマホで使うときのワンポイント</h2>
-      <p>AIアプリはテキスト入力だけでなく、**音声入力**や**カメラ機能（写真撮影）**を組み合わせることで威力を発揮します。</p>
-      <ul>
-        <li>手書きのカルテや指導メモを撮影して要約してもらう</li>
-        <li>移動中に音声入力でAIにアイデアを喋りかける</li>
-      </ul>
+      <p>AIアプリはテキスト入力だけでなく、<span class="highlight">音声入力</span>や<span class="highlight">カメラ機能（写真撮影）</span>を組み合わせることで威力を発揮します。</p>
+      
+      <div class="point-box">
+        💡 <strong>おすすめの使い方</strong>
+        <ul style="margin-bottom:0; padding-left: 1.2rem;">
+          <li>手書きのカルテや指導メモを撮影して要約してもらう</li>
+          <li>移動中に音声入力でAIにアイデアを喋りかける</li>
+        </ul>
+      </div>
     </section>
 
     <div style="text-align: center;">
