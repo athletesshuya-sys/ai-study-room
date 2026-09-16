@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【第7章】最新論文・文献をAIで検索・要約するリサーチ術 - AI実践室</title>
+  <style>
+    :root {
+      --primary-color: #2e7d32;
+      --primary-light: #e8f5e9;
+      --accent-color: #ff9800;
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.8;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      color: white;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 0.4rem;
+      font-size: 1.3rem;
+      margin-top: 0;
+    }
+    .highlight {
+      background: linear-gradient(transparent 60%, #fff59d 60%);
+      font-weight: bold;
+    }
+    .prompt-box {
+      background-color: #272822;
+      color: #f8f8f2;
+      border-radius: 8px;
+      padding: 1.2rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin: 1rem 0;
+    }
+    .point-box {
+      background-color: var(--primary-light);
+      border: 1px dashed var(--primary-color);
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin-top: 1rem;
+    }
+    .nav-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      color: white;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin: 1.5rem 0 3rem;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+      transition: transform 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>【第7章】最新論文・文献をAIで<br>検索・要約するリサーチ術</h1>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1. エビデンスに基づいた指導のためのリサーチ</h2>
+      <p>英語論文や専門書籍のリサーチは時間がかかりますが、AIを使えば<span class="highlight">「要点の要約」や「日本語訳」が一瞬</span>で完了し、最新のエビデンスを素早く指導に取り入れられます。</p>
+    </section>
+
+    <section class="card">
+      <h2>2. 論文要約プロンプト例</h2>
+      <p>検索機能を持ったAI（GeminiやWeb検索対応のChatGPT）で、知りたいテーマや論文URLを指定して実行します。</p>
+      
+      <div class="prompt-box">【前提】
+あなたはスポーツ科学および運動生理学の研究者です。
+
+【テーマ】
+「筋肥大におけるセット間インターバルの長さ（1分 vs 3分）の影響」
+
+【指示】
+上記テーマに関する近年の研究結果やメタアナリシスの要点を分かりやすくまとめてください。
+
+【出力フォーマット】
+1. 結論（簡潔に1行で）
+2. 筋肥大への影響についての比較
+3. 筋力向上への影響についての比較
+4. トレーナーが実際の指導現場で活かすための具体的なアドバイス</div>
+    </section>
+
+    <section class="card">
+      <h2>3. 情報収集時の注意点</h2>
+      <div class="point-box">
+        ⚠️ <strong>ハルシネーション（ウソの情報）に注意</strong>
+        <p style="margin-bottom:0; font-size: 0.95rem;">
+          AIが実在しない論文名や間違った数値を提示することがあります。「出典元の論文タイトルやリンクを提示してください」と指示し、重要な情報は一次情報（原文論文）を必ず確認する癖をつけましょう。
+        </p>
+      </div>
+    </section>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="nav-btn">← トップページに戻る</a>
+    </div>
+  </main>
+
+</body>
+</html>
