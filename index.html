@@ -21,22 +21,25 @@
       margin: 0;
       padding: 0;
     }
+    /* ヘッダーに写真を背景として追加（暗めのグラデーションを重ねて文字を見やすく） */
     header {
-      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(46, 125, 50, 0.85)), 
+                  url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       color: white;
-      padding: 2.5rem 1rem;
+      padding: 3.5rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
     header h1 {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       font-weight: bold;
+      letter-spacing: 0.05em;
     }
     header p {
-      margin: 0.5rem 0 0;
-      font-size: 0.9rem;
-      opacity: 0.9;
+      margin: 0.8rem 0 0;
+      font-size: 0.95rem;
+      opacity: 0.95;
     }
     .container {
       max-width: 800px;
@@ -57,32 +60,70 @@
       font-size: 1.3rem;
       margin-top: 0;
     }
-    .chapter-card {
-      background-color: var(--primary-light);
-      border-left: 5px solid var(--primary-color);
-      border-radius: 8px;
-      padding: 1.2rem;
-      margin-bottom: 1.2rem;
+    
+    /* プロフィール用のスタイル */
+    .profile-box {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 1rem;
     }
-    .chapter-card h3 {
-      margin: 0 0 0.5rem 0;
-      color: var(--primary-color);
-      font-size: 1.1rem;
+    .profile-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary-color);
+      flex-shrink: 0;
     }
-    .chapter-card p {
-      margin: 0 0 1rem 0;
+    .profile-text {
       font-size: 0.95rem;
     }
-    .btn {
+    .profile-name {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      margin-bottom: 0.2rem;
+    }
+
+    /* コンパクトな12章一覧用のスタイル */
+    .chapter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .chapter-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--primary-light);
+      border-left: 4px solid var(--primary-color);
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      transition: background-color 0.2s;
+    }
+    .chapter-item:hover {
+      background-color: #dcedc8;
+    }
+    .chapter-title {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: var(--text-color);
+      margin: 0;
+      padding-right: 0.5rem;
+    }
+    .btn-sm {
       display: inline-block;
       background-color: var(--primary-color);
       color: white;
       text-decoration: none;
-      padding: 0.5rem 1.5rem;
-      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      border-radius: 15px;
       font-weight: bold;
-      font-size: 0.9rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-size: 0.85rem;
+      white-space: nowrap;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -99,79 +140,85 @@
       <p>このサイトでは、パーソナルトレーナーやセラピストが日常業務や指導で今すぐ使えるAI活用ノウハウを発信しています。最新のAIツールを取り入れて、業務効率化と指導のクオリティ向上を目指しましょう！</p>
     </section>
 
+    <!-- 管理人プロフィール -->
     <section class="card">
-      <h2>目次（コンテンツ一覧）</h2>
-
-      <div class="chapter-card">
-        <h3>第1章：なぜ今、ヘルスケア業界でAIなのか？</h3>
-        <p>AIを導入するメリットや、トレーナーの現場でどのように役立つのかの基礎知識を解説します。</p>
-        <a href="chapter1.html" class="btn">読む</a>
+      <h2>管理人プロフィール</h2>
+      <div class="profile-box">
+        <!-- プロフィール画像（自由に変更可能です） -->
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="管理人アイコン" class="profile-img">
+        <div class="profile-text">
+          <div class="profile-name">運営者：トレーナーAI実践室</div>
+          <p style="margin: 0; font-size: 0.88rem; color: #555;">
+            現場での指導経験を活かし、パーソナルトレーナーやセラピスト向けに「現場で本当に使えるAI活用術」を発信中。セッション作成・カウンセリング・SNS発信の効率化をサポートします。
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="chapter-card">
-        <h3>第2章：無料・スマホで始めるAI活用！アプリの準備</h3>
-        <p>ChatGPTやGeminiなど、スマホで手軽に使えるおすすめアプリと初期設定手順をまとめました。</p>
-        <a href="chapter2.html" class="btn">読む</a>
-      </div>
+    <!-- タイトルのみのコンパクト目次一覧 -->
+    <section class="card">
+      <h2>目次（全12章）</h2>
 
-      <div class="chapter-card">
-        <h3>第3章：運動処方・メニュー作成を効率化するプロンプト術</h3>
-        <p>クライアントの要望に応じたパーソナルトレーニングメニューをAIに作成させる具体的な指示文（プロンプト）。</p>
-        <a href="chapter3.html" class="btn">読む</a>
-      </div>
+      <div class="chapter-list">
+        <div class="chapter-item">
+          <span class="chapter-title">💡 第1章：なぜ今、ヘルスケア業界でAIなのか？</span>
+          <a href="chapter1.html" class="btn-sm">読む</a>
+        </div>
 
-      <div class="chapter-card">
-        <h3>第4章：カルテ作成・カウンセリング要約プロンプト</h3>
-        <p>セッション中のメモや聞き取り内容を瞬時に美しい電子カルテ形式に要約・整理するテクニック。</p>
-        <a href="chapter4.html" class="btn">読む</a>
-      </div>
+        <div class="chapter-item">
+          <span class="chapter-title">📱 第2章：無料・スマホで始めるAI活用！アプリの準備</span>
+          <a href="chapter2.html" class="btn-sm">読む</a>
+        </div>
 
-      <div class="chapter-card">
-        <h3>第5章：SNS・ブログ発信をAIで効率化するテクニック</h3>
-        <p>投稿アイデアの発案から、Instagramやブログの文章作成までをAIで自動化・短縮する方法。</p>
-        <a href="chapter5.html" class="btn">読む</a>
-      </div>
+        <div class="chapter-item">
+          <span class="chapter-title">🏋️‍♂️ 第3章：運動処方・メニュー作成を効率化するプロンプト術</span>
+          <a href="chapter3.html" class="btn-sm">読む</a>
+        </div>
 
-      <div class="chapter-card">
-        <h3>第6章：AIを活用した食事指導・栄養アドバイス作成</h3>
-        <p>食事記録に対するPFCバランスの解説や、モチベーションを高めるフィードバック文章の作成。</p>
-        <a href="chapter6.html" class="btn">読む</a>
-      </div>
+        <div class="chapter-item">
+          <span class="chapter-title">📋 第4章：カルテ作成・カウンセリング要約プロンプト</span>
+          <a href="chapter4.html" class="btn-sm">読む</a>
+        </div>
 
-      <div class="chapter-card">
-        <h3>第7章：最新論文・文献をAIで検索・要約するリサーチ術</h3>
-        <p>エビデンスに基づいた指導を行うために、海外論文や最新の研究結果を素早く検索・要約する手法。</p>
-        <a href="chapter7.html" class="btn">読む</a>
-      </div>
+        <div class="chapter-item">
+          <span class="chapter-title">📲 第5章：SNS・ブログ発信をAIで効率化するテクニック</span>
+          <a href="chapter5.html" class="btn-sm">読む</a>
+        </div>
 
-      <div class="chapter-card">
-        <h3>第8章：クレーム対応・メール返信を円滑にする対話プロンプト</h3>
-        <p>予約変更やキャンセル対応、気を使うご意見に対しても角を立てず丁寧に返信する文章作成術。</p>
-        <a href="chapter8.html" class="btn">読む</a>
-      </div>
+        <div class="chapter-item">
+          <span class="chapter-title">🥗 第6章：AIを活用した食事指導・栄養アドバイス作成</span>
+          <a href="chapter6.html" class="btn-sm">読む</a>
+        </div>
 
-      <div class="chapter-card">
-        <h3>第9章：ジム運営・売上管理を効率化するスプレッドシート×AI活用</h3>
-        <p>ExcelやGoogleスプレッドシートの関数作成やエラー解決、売上データ分析をAIに任せる技。</p>
-        <a href="chapter9.html" class="btn">読む</a>
-      </div>
+        <div class="chapter-item">
+          <span class="chapter-title">📚 第7章：最新論文・文献をAIで検索・要約するリサーチ術</span>
+          <a href="chapter7.html" class="btn-sm">読む</a>
+        </div>
 
-      <div class="chapter-card">
-        <h3>第10章：画像生成AIで作るチラシ・POP・アイキャッチ画像</h3>
-        <p>プログラミング不要で店舗POPやSNS用の挿し絵イラストを言葉（プロンプト）だけで作る方法。</p>
-        <a href="chapter10.html" class="btn">読む</a>
-      </div>
+        <div class="chapter-item">
+          <span class="chapter-title">💬 第8章：クレーム対応・メール返信を円滑にする対話プロンプト</span>
+          <a href="chapter8.html" class="btn-sm">読む</a>
+        </div>
 
-      <div class="chapter-card">
-        <h3>第11章：AIを活用した集客・マーケティング戦略</h3>
-        <p>ターゲット層（ペルソナ）の設計や体験レッスン企画のアイデア出しなど、集客力を高める思考法。</p>
-        <a href="chapter11.html" class="btn">読む</a>
-      </div>
+        <div class="chapter-item">
+          <span class="chapter-title">📊 第9章：ジム運営・売上管理を効率化するスプレッドシート×AI活用</span>
+          <a href="chapter9.html" class="btn-sm">読む</a>
+        </div>
 
-      <div class="chapter-card">
-        <h3>第12章：ヘルスケア×AIの未来とトレーナーの役割</h3>
-        <p>AI時代に求められる人間のトレーナーの価値と、これからの現場での歩み方についてのまとめ。</p>
-        <a href="chapter12.html" class="btn">読む</a>
+        <div class="chapter-item">
+          <span class="chapter-title">🎨 第10章：画像生成AIで作るチラシ・POP・アイキャッチ画像</span>
+          <a href="chapter10.html" class="btn-sm">読む</a>
+        </div>
+
+        <div class="chapter-item">
+          <span class="chapter-title">🎯 第11章：AIを活用した集客・マーケティング戦略</span>
+          <a href="chapter11.html" class="btn-sm">読む</a>
+        </div>
+
+        <div class="chapter-item">
+          <span class="chapter-title">🤝 第12章：ヘルスケア×AIの未来とトレーナーの役割</span>
+          <a href="chapter12.html" class="btn-sm">読む</a>
+        </div>
       </div>
 
     </section>
