@@ -108,13 +108,22 @@
       align-items: center;
     }
 
-    /* ★ AIロゴ画像用スタイル */
-    .app-logo {
-      width: 52px;
-      height: 52px;
-      object-fit: contain;
+    /* ★ AIロゴ画像用スタイル（背景白＆綺麗に収める） */
+    .app-logo-wrap {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 0.8rem;
-      border-radius: 10px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .app-logo {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
     }
     .app-name {
       font-weight: bold;
@@ -236,7 +245,7 @@
       </div>
     </section>
 
-    <!-- アプリ比較図解（公式ロゴ版） -->
+    <!-- アプリ比較図解（安定・公式ロゴ版） -->
     <section class="card">
       <h2>まず入れるべきおすすめAIアプリ3選</h2>
       <p>すべて基本無料で使えます。用途に合わせて使い分けるのがスマートです。</p>
@@ -244,7 +253,9 @@
       <div class="app-grid">
         <!-- ChatGPT -->
         <div class="app-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPTロゴ" class="app-logo">
+          <div class="app-logo-wrap">
+            <img src="https://www.vectorlogo.zone/logos/openai/openai-icon.svg" alt="ChatGPTロゴ" class="app-logo">
+          </div>
           <div class="app-name">ChatGPT</div>
           <span class="app-tag">王道・万能型</span>
           <p class="app-desc">会話・文章作成・画像解析・音声対話のすべてが高水準。まずはこれだけでOK。</p>
@@ -252,7 +263,9 @@
 
         <!-- Claude -->
         <div class="app-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Claude_AI_logo.svg" alt="Claudeロゴ" class="app-logo">
+          <div class="app-logo-wrap">
+            <img src="https://www.vectorlogo.zone/logos/anthropic/anthropic-icon.svg" alt="Claudeロゴ" class="app-logo">
+          </div>
           <div class="app-name">Claude</div>
           <span class="app-tag">文章・要約特化</span>
           <p class="app-desc">自然な日本語と長文読解が得意。論文要約やカウンセリング記録の文章整理に最適。</p>
@@ -260,7 +273,9 @@
 
         <!-- Gemini -->
         <div class="app-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" alt="Geminiロゴ" class="app-logo">
+          <div class="app-logo-wrap">
+            <img src="https://www.vectorlogo.zone/logos/google_gemini/google_gemini-icon.svg" alt="Geminiロゴ" class="app-logo">
+          </div>
           <div class="app-name">Gemini</div>
           <span class="app-tag">Google連携・最新情報</span>
           <p class="app-desc">Google検索やYouTube、Gmailなどと連携し、最新のヘルスケアトレンド調査に強み。</p>
