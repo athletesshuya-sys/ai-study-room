@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>【第2章】無料・スマホで始めるAI活用！アプリの準備 - AI実践室</title>
+  <title>第2章：無料・スマホで始めるAI活用！アプリの準備 - ヘルスケア＆フィットネスAI実践室</title>
   <style>
     :root {
       --primary-color: #2e7d32;
@@ -22,16 +22,20 @@
       padding: 0;
     }
     header {
-      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      background: linear-gradient(rgba(27, 94, 32, 0.9), rgba(46, 125, 50, 0.9)),
+                  url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       color: white;
-      padding: 2.5rem 1rem;
+      padding: 3rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     header h1 {
       margin: 0;
       font-size: 1.5rem;
-      font-weight: bold;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      opacity: 0.9;
     }
     .container {
       max-width: 800px;
@@ -47,116 +51,266 @@
     }
     h2 {
       color: var(--primary-color);
-      border-bottom: 3px solid var(--primary-color);
-      padding-bottom: 0.4rem;
-      font-size: 1.3rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.3rem;
+      font-size: 1.25rem;
       margin-top: 0;
     }
-    .highlight {
-      background: linear-gradient(transparent 60%, #fff59d 60%);
-      font-weight: bold;
+    h3 {
+      font-size: 1.05rem;
+      color: #1b5e20;
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    .app-box {
-      background-color: #f9f9f9;
-      border-left: 5px solid var(--primary-color);
-      padding: 1rem;
+
+    /* アイコン・画像バナー */
+    .banner-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
       margin: 1rem 0;
-      border-radius: 0 8px 8px 0;
+      object-fit: cover;
     }
-    .step-list {
-      counter-reset: step;
-      list-style: none;
-      padding-left: 0;
+
+    /* ポイント・図解ボックス */
+    .info-box {
+      background-color: var(--primary-light);
+      border-left: 5px solid var(--primary-color);
+      padding: 1rem 1.2rem;
+      border-radius: 6px;
+      margin: 1.2rem 0;
+      font-size: 0.95rem;
     }
-    .step-list li {
+    .info-box-title {
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 0.3rem;
+    }
+
+    /* アプリ比較カードグリッド */
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+    .app-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 1rem;
+      background: #fafafa;
+      text-align: center;
+    }
+    .app-icon-text {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .app-name {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 0.3rem;
+    }
+    .app-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #e0f2f1;
+      color: #00695c;
+      padding: 0.1rem 0.5rem;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* プロンプトボックス（コピーボタン付き） */
+    .prompt-box-wrapper {
       position: relative;
-      padding-left: 2.8rem;
-      margin-bottom: 1.2rem;
+      margin: 1.2rem 0;
     }
-    .step-list li::before {
-      counter-increment: step;
-      content: counter(step);
+    .prompt-box {
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 1.2rem;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.88rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.6;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover {
+      background-color: #1b5e20;
+    }
+
+    /* ステップナビゲーション */
+    .step-list {
+      counter-reset: step-counter;
+      list-style: none;
+      padding: 0;
+    }
+    .step-item {
+      position: relative;
+      padding-left: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    .step-item::before {
+      counter-increment: step-counter;
+      content: counter(step-counter);
       position: absolute;
       left: 0;
       top: 0;
+      width: 2.2rem;
+      height: 2.2rem;
       background-color: var(--primary-color);
       color: white;
-      width: 2rem;
-      height: 2rem;
       border-radius: 50%;
       text-align: center;
-      line-height: 2rem;
+      line-height: 2.2rem;
       font-weight: bold;
     }
-    .point-box {
-      background-color: var(--primary-light);
-      border: 1px dashed var(--primary-color);
-      border-radius: 10px;
-      padding: 1.2rem;
-      margin-top: 1rem;
-    }
-    .nav-btn {
+
+    .btn-back {
       display: inline-block;
-      background: linear-gradient(135deg, #2e7d32, #1b5e20);
-      color: white;
+      margin-top: 1.5rem;
+      color: var(--primary-color);
       text-decoration: none;
-      padding: 0.9rem 2rem;
-      border-radius: 30px;
       font-weight: bold;
-      text-align: center;
-      margin: 1.5rem 0 3rem;
-      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
-      transition: transform 0.2s;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>【第2章】無料・スマホで始めるAI活用！<br>アプリの準備</h1>
+    <h1>第2章：無料・スマホで始めるAI活用！アプリの準備</h1>
+    <p>PC不要！iPhone・iPad・Androidで今日から始めるAI環境構築</p>
   </header>
 
   <main class="container">
-    <section class="card">
-      <h2>1. まず準備すべきおすすめAIアプリ</h2>
-      <p>トレーナーやセラピストが日常業務や学習で活用するなら、まずは以下の2つの無料アプリをスマホに入れておけば間違いありません。</p>
-      
-      <div class="app-box">
-        <strong>📱 ChatGPT (OpenAI)</strong><br>
-        思考の整理、アイデア出し、文章の作成・要約に万能。まずはこれ！
-      </div>
-      <div class="app-box">
-        <strong>📱 Gemini (Google)</strong><br>
-        最新情報の検索やGoogleサービスとの連携が得意。論文検索などにも活躍！
-      </div>
-    </section>
 
+    <!-- 導入解説 -->
     <section class="card">
-      <h2>2. アプリのセットアップ3ステップ</h2>
-      <ol class="step-list">
-        <li>App Store（iPhone）を開き、「ChatGPT」または「Gemini」で検索して入手。</li>
-        <li>アプリを起動し、GoogleアカウントまたはApple IDでサインイン。</li>
-        <li>マイク許可や通知許可を設定して準備完了！</li>
-      </ol>
-    </section>
-
-    <section class="card">
-      <h2>3. スマホで使うときのワンポイント</h2>
-      <p>AIアプリはテキスト入力だけでなく、<span class="highlight">音声入力</span>や<span class="highlight">カメラ機能（写真撮影）</span>を組み合わせることで威力を発揮します。</p>
+      <h2>スマホ1台で現場が変わる理由</h2>
+      <p>「AIを活用するにはパソコンやプログラミングが必要なのでは？」と思われがちですが、**トレーナーやセラピストの現場で最も威力を発揮するのは「スマホ・タブレット」**です。</p>
       
-      <div class="point-box">
-        💡 <strong>おすすめの使い方</strong>
-        <ul style="margin-bottom:0; padding-left: 1.2rem;">
-          <li>手書きのカルテや指導メモを撮影して要約してもらう</li>
-          <li>移動中に音声入力でAIにアイデアを喋りかける</li>
+      <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=800&q=80" alt="スマホ操作イメージ" class="banner-img">
+
+      <div class="info-box">
+        <div class="info-box-title">💡 現場アプリ活用の3大メリット</div>
+        <ul>
+          <li><strong>音声入力の精度が抜群：</strong> セッション後や施術直後に「音声」でカルテやメモを即座にAI入力できる。</li>
+          <li><strong>カメラ連携：</strong> 姿勢写真やフォーム動画のスクリーンショットをそのままAIに読み込ませて分析できる。</li>
+          <li><strong>すきま時間の活用：</strong> 移動中や指導の合間に1〜2分でメニュー考案やSNS下書きが完了する。</li>
         </ul>
       </div>
     </section>
 
-    <div style="text-align: center;">
-      <a href="index.html" class="nav-btn">← トップページに戻る</a>
-    </div>
+    <!-- アプリ比較図解 -->
+    <section class="card">
+      <h2>まず入れるべきおすすめAIアプリ3選</h2>
+      <p>すべて基本無料で使えます。用途に合わせて使い分けるのがスマートです。</p>
+
+      <div class="app-grid">
+        <div class="app-card">
+          <div class="app-icon-text">🟢</div>
+          <div class="app-name">ChatGPT</div>
+          <span class="app-tag">王道・万能型</span>
+          <p style="font-size:0.82rem; color:#666; text-align:left;">会話・文章作成・画像解析・音声対話のすべてが高水準。まずはこれだけでOK。</p>
+        </div>
+        <div class="app-card">
+          <div class="app-icon-text">🔵</div>
+          <div class="app-name">Claude</div>
+          <span class="app-tag">文章・要約特化</span>
+          <p style="font-size:0.82rem; color:#666; text-align:left;">自然な日本語と長文読解が得意。論文要約やカウンセリング記録の文章整理に最適。</p>
+        </div>
+        <div class="app-card">
+          <div class="app-icon-text">🔴</div>
+          <div class="app-name">Gemini</div>
+          <span class="app-tag">Google連携・最新情報</span>
+          <p style="font-size:0.82rem; color:#666; text-align:left;">Google検索やYouTube、Gmailなどと連携し、最新のヘルスケアトレンド調査に強み。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 設定と準備ステップ -->
+    <section class="card">
+      <h2>導入ステップと初期設定（3分で完了）</h2>
+      
+      <ul class="step-list">
+        <li class="step-item">
+          <strong>アプリのダウンロード</strong><br>
+          App StoreまたはGoogle Playで「ChatGPT」と検索し、公式アプリ（OpenAI製）をインストールします。
+        </li>
+        <li class="step-item">
+          <strong>アカウント作成・ログイン</strong><br>
+          GoogleアカウントやApple IDを使えば、ワンタップで数十秒でログインが完了します。
+        </li>
+        <li class="step-item">
+          <strong>【重要】「カスタム指示」の設定</strong><br>
+          AIに「あなたが柔道整復師・JSPO-ATをサポートする助手であること」を事前に登録しておくと、回答精度が劇的に上がります。
+        </li>
+      </ul>
+
+      <h3>🛠️ おすすめの「カスタム指示」初期設定プロンプト</h3>
+      <p>ChatGPTの設定画面（Custom Instructions / カスタマイズ）の「AIに知っておいてほしいこと」に入力しておくと便利です。</p>
+
+      <div class="prompt-box-wrapper">
+        <button class="copy-btn" onclick="copyPrompt(this)">📋 コピー</button>
+        <div class="prompt-box">【前提条件】
+私はJSPO-AT（アスレティックトレーナー）および柔道整復師として、スポーツ現場や治療・パーソナルトレーニング現場で指導を行っています。
+
+【回答ルール】
+1. 専門用語（解剖学・運動生理学）を正確に理解した上で、クライアントにもわかりやすい言葉で解説を作成してください。
+2. 運動処方や評価においては、解剖学的根拠（主動作筋・協働筋・関節可動域など）を意識した提案を行ってください。
+3. 回答は箇条書きを活用し、スマートフォン画面で読みやすいレイアウトに整形してください。</div>
+      </div>
+    </section>
+
+    <!-- 現場でのファーストステップ -->
+    <section class="card">
+      <h2>今日からできる！スマホAI活用のファーストステップ</h2>
+      <p>まずはアプリを開き、音声入力ボタン（マイクマーク）を押して、セッション直後の感想やクライアントの訴えを呟いてみましょう。</p>
+      
+      <div class="info-box">
+        <div class="info-box-title">🎤 音声入力の試し方例</div>
+        <p style="margin: 0;">「今日のクライアント、40代女性、右肩関節の屈曲時に引っかかり感あり。インナーマッスルの活性化メニューを3つ提案して」</p>
+      </div>
+
+      <p>これだけで、解剖学的根拠に基づいたメニュー案が数秒で生成されます！次回は第3章「運動処方・メニュー作成効率化」で具体的なプロンプト実践に入ります。</p>
+
+      <a href="index.html" class="btn-back">← 目次（トップページ）に戻る</a>
+    </section>
+
   </main>
+
+  <script>
+    function copyPrompt(button) {
+      const wrapper = button.parentElement;
+      const promptText = wrapper.querySelector('.prompt-box').innerText;
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.innerText;
+        button.innerText = '✅ コピー完了！';
+        button.style.backgroundColor = '#4caf50';
+        setTimeout(() => {
+          button.innerText = originalText;
+          button.style.backgroundColor = 'var(--primary-color)';
+        }, 2000);
+      });
+    }
+  </script>
 
 </body>
 </html>
