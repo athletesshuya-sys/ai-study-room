@@ -65,7 +65,7 @@
       gap: 0.5rem;
     }
 
-    /* アイコン・画像バナー */
+    /* 画像バナー */
     .banner-img {
       width: 100%;
       height: auto;
@@ -92,34 +92,52 @@
     /* アプリ比較カードグリッド */
     .app-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1rem;
-      margin: 1.2rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin: 1.5rem 0;
     }
     .app-card {
       border: 1px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 1rem;
-      background: #fafafa;
+      border-radius: 12px;
+      padding: 1.2rem;
+      background: #ffffff;
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .app-icon-text {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+
+    /* ★ AIロゴ画像用スタイル */
+    .app-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      margin-bottom: 0.8rem;
+      border-radius: 10px;
     }
     .app-name {
       font-weight: bold;
+      font-size: 1.1rem;
       color: #333;
       margin-bottom: 0.3rem;
     }
     .app-tag {
       display: inline-block;
       font-size: 0.75rem;
-      background: #e0f2f1;
-      color: #00695c;
-      padding: 0.1rem 0.5rem;
-      border-radius: 10px;
-      margin-bottom: 0.5rem;
+      font-weight: bold;
+      background: #e8f5e9;
+      color: var(--primary-color);
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+    }
+    .app-desc {
+      font-size: 0.85rem;
+      color: #555;
+      text-align: left;
+      line-height: 1.6;
+      margin: 0;
     }
 
     /* プロンプトボックス（コピーボタン付き） */
@@ -218,29 +236,34 @@
       </div>
     </section>
 
-    <!-- アプリ比較図解 -->
+    <!-- アプリ比較図解（公式ロゴ版） -->
     <section class="card">
       <h2>まず入れるべきおすすめAIアプリ3選</h2>
       <p>すべて基本無料で使えます。用途に合わせて使い分けるのがスマートです。</p>
 
       <div class="app-grid">
+        <!-- ChatGPT -->
         <div class="app-card">
-          <div class="app-icon-text">🟢</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPTロゴ" class="app-logo">
           <div class="app-name">ChatGPT</div>
           <span class="app-tag">王道・万能型</span>
-          <p style="font-size:0.82rem; color:#666; text-align:left;">会話・文章作成・画像解析・音声対話のすべてが高水準。まずはこれだけでOK。</p>
+          <p class="app-desc">会話・文章作成・画像解析・音声対話のすべてが高水準。まずはこれだけでOK。</p>
         </div>
+
+        <!-- Claude -->
         <div class="app-card">
-          <div class="app-icon-text">🔵</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Claude_AI_logo.svg" alt="Claudeロゴ" class="app-logo">
           <div class="app-name">Claude</div>
           <span class="app-tag">文章・要約特化</span>
-          <p style="font-size:0.82rem; color:#666; text-align:left;">自然な日本語と長文読解が得意。論文要約やカウンセリング記録の文章整理に最適。</p>
+          <p class="app-desc">自然な日本語と長文読解が得意。論文要約やカウンセリング記録の文章整理に最適。</p>
         </div>
+
+        <!-- Gemini -->
         <div class="app-card">
-          <div class="app-icon-text">🔴</div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" alt="Geminiロゴ" class="app-logo">
           <div class="app-name">Gemini</div>
           <span class="app-tag">Google連携・最新情報</span>
-          <p style="font-size:0.82rem; color:#666; text-align:left;">Google検索やYouTube、Gmailなどと連携し、最新のヘルスケアトレンド調査に強み。</p>
+          <p class="app-desc">Google検索やYouTube、Gmailなどと連携し、最新のヘルスケアトレンド調査に強み。</p>
         </div>
       </div>
     </section>
@@ -252,7 +275,7 @@
       <ul class="step-list">
         <li class="step-item">
           <strong>アプリのダウンロード</strong><br>
-          App StoreまたはGoogle Playで「ChatGPT」と検索し、公式アプリ（OpenAI製）をインストールします。
+          App StoreまたはGoogle Playで「ChatGPT」と検索し、公式アプリをインストールします。
         </li>
         <li class="step-item">
           <strong>アカウント作成・ログイン</strong><br>
@@ -260,7 +283,7 @@
         </li>
         <li class="step-item">
           <strong>【重要】「カスタム指示」の設定</strong><br>
-          AIに「あなたが柔道整復師・JSPO-ATをサポートする助手であること」を事前に登録しておくと、回答精度が劇的に上がります。
+          AIに「自分が柔道整復師・JSPO-ATであること」を事前に登録しておくと、回答精度が劇的に上がります。
         </li>
       </ul>
 
